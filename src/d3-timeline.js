@@ -337,7 +337,23 @@
 
                 return d.class ? d.class : 'timelineItem_' + index + '_' + i;
               })
+              .attr('data-author', function(d, i) {
+                if (d['author']) {
+                  return d['author'];
+                }
               })
+              .attr('data-assignee', function(d, i) {
+                if (d['assignee']) {
+                  return d['assignee'];
+                }
+              })
+              .attr('data-issue_number', function(d, i) {
+                if (d['issue_number']) {
+                  return d['issue_number'];
+                }
+              })
+
+
             ;
 
           g.selectAll('svg').data(data).enter()
